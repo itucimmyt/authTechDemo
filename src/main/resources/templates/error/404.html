@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Active Directory Auth - Tech. Demo</title>
+<link rel="stylesheet" type="text/css" href="../static/css/base.css"
+	th:href="@{/css/base.css}" />
+</head>
+<body>
+	<div class="centered">
+		<h3 th:text="#{error.404.title}">Not Found</h3>
+		<p  th:text="#{error.404.caption}">The requested resource does not exists</p>
+		<a href="/home" th:text="#{general.home}">to home!</a>
+	</div>
+</body>
+</html>

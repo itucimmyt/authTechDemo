@@ -1,0 +1,39 @@
+logging:
+    level:
+        org:
+            springframework:
+                security: DEBUG
+spring:
+  thymeleaf:
+    cache: false
+
+# sensitive information in this section is only for development purposes.
+# For production environments they must be read from system-level variables or any 
+# mechanism other than application properties.
+security:
+  cimmyt:
+    ldap:
+      url: ldap://172.17.32.5:3268/
+      managerDN: CN=CRILSERVICES (CIMMYT),OU=CIMMYT-Genetic Resources,OU=CIMMYT-Research,OU=CIMMYT,DC=CIMMYT,DC=CGIARAD,DC=ORG
+      managerPassword: krilisgra8
+      searchBase: DC=CGIARAD,DC=ORG
+      searchFilter: userPrincipalName={0}
+    oauth:
+      google:
+        client:
+          clientId:  233861527176-lmtlds5i0smjj4qf8ealfs4cs7g91ur8.apps.googleusercontent.com
+          clientSecret:  BXx4OIqt9DOlN7cIF78P0Qnp 
+          accessTokenUri: https://www.googleapis.com/oauth2/v4/token
+          userAuthorizationUri: https://accounts.google.com/o/oauth2/v2/auth
+          clientAuthenticationScheme: form
+          scope:
+            - email
+            - profile
+        resource:
+          userInfoUri: https://www.googleapis.com/oauth2/v3/userinfo    
+  oauth2:
+    client:
+      client-id: cimmyt
+      client-secret: cimmytsecret
+      scope: read
+

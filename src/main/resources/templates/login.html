@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+<title>Active Directory Auth - Tech. Demo</title>
+<link rel="stylesheet" type="text/css" href="../static/css/base.css"
+	th:href="@{/css/base.css}" />
+</head>
+<body>
+	<nav>
+		<a href="/home" th:text="#{general.home}">to home!</a>
+	</nav>
+
+	<div class="centered">
+		<div th:if="${param.error}" th:text="#{login.error}" class="loginMsg">bad creds!</div>
+		<div th:if="${param.logout}" th:text="#{login.logout}" class="loginMsg">session closed!</div>
+		<div class="formBox">
+			<form th:action="@{/login}" method="post">
+				<fieldset>
+					<legend th:text="#{login.legend}">Please type!</legend>
+					<label th:text="#{login.user}"> User Name:</label><br /> 
+					<input type="text" th:placeholder="#{login.user.placeholder}" name="username"
+						autofocus="autofocus" placeholder="e.g: some@mail.com" /><br /> 
+					<label th:text="#{login.password}">	Password!</label><br />
+					<input type="password" name="password"/><br />
+					<input	type="submit" value="Sign In" th:value="#{login.submit}"/>
+				</fieldset>
+			</form>
+			<div>
+				<span th:text="#{login.google}">to log in with your Google Account:</span> <a href="/login/google" th:text="#{login.google.click}">click here!</a>
+			</div>
+			
+		</div>
+	</div>
+</body>
+</html>

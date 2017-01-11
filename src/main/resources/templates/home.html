@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+<title>Active Directory Auth - Tech. Demo</title>
+<link rel="stylesheet" type="text/css" href="../static/css/base.css"
+	th:href="@{/css/base.css}" />
+</head>
+<body>
+	<nav>
+		<a sec:authorize="!isAuthenticated()" href="/login"
+			th:text="#{general.login}">a login!</a>
+		<div sec:authorize="isAuthenticated()">
+			<span>Logged in as: 
+				<span th:text="${#authentication.name}">user!</span> 
+			</span>
+			<form th:action="@{/logout}" method="post">
+				<input type="submit" th:value="#{general.logout}" value="Sign Out!" />
+			</form>
+
+		</div>
+	</nav>
+	<h1 th:text="#{home.welcome}">hi!</h1>
+	<h3 th:text="#{home.title}">explain home!</h3>
+
+	<p th:text="#{home.caption.secureLink}">Click on link below!:</p>
+	<p>
+		<a th:href="@{/secured}" href="#" th:text="#{home.secureLink}">Go
+			secure!</a>
+	</p>
+</body>
+</html>
