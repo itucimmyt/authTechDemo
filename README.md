@@ -1,4 +1,4 @@
-# Technical Demo: LDAP Authentication
+# Technical Demo: LDAP & OAuth Authentication
 This demo shows a simple authentication process in Java. It connects to CIMMYT's Active Directory through an LDAP service and also supports authentication with a Google Account. It's designed to run as an executable _jar_ file.
 
 This Project is based on the examples listed [here](#aGuide):
