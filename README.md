@@ -24,7 +24,7 @@ Application supports spanish and english(default). It uses the predefined langua
 * At runtime starts a local HTTP Server so it needs the port 8080 available.
 * For authentication with Active Directory needs a LDAP server visible in the local network, or a public domain to access it.
     * It also needs an LDAP user with read privileges.
-* For authentication with OAuth (Google) just needs to use the port 8080 and use _localhost_ as the server name, since this is the URI configured with  the ITU account managing the app.
+* For authentication with OAuth (Google) just needs to use the port 8080 and use _localhost_ as the server name, since this is the URI configured with the ITU account in Google Services when registering the app.
 
 ### Libraries
 Most Relevant:
@@ -33,6 +33,7 @@ Most Relevant:
 * Spring MVC: Dispatch web requests.
 * Spring Security: Provide authentication and authorization capabilities.
 * Spring Security LDAP: Sub-module for authentication with LDAP server.
+* Spring Security OAuth2: Sub-module for authentication with OAuth2 authentication providers.
 * Thymeleaf: Templating framework.
 * Thymeleaf - Spring Security integration: Facilitates using Spring Security objects in templates with a custom _dialect_.
 

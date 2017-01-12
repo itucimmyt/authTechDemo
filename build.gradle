@@ -31,6 +31,8 @@ dependencies {
     compile("org.springframework.boot:spring-boot-starter-security")
     compile("org.springframework.security:spring-security-ldap")
     compile("org.thymeleaf.extras:thymeleaf-extras-springsecurity4")
+    compile("org.springframework.security.oauth:spring-security-oauth2")
+    compileOnly("org.springframework.boot:spring-boot-configuration-processor")
 
     testCompile("junit:junit")
     testCompile("org.springframework.boot:spring-boot-starter-test")
