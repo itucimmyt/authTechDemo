@@ -88,14 +88,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	public void configureGlobal(AuthenticationManagerBuilder amb) throws Exception {
 		
 		amb.ldapAuthentication()
-			.contextSource()
-				.url(config().url)
-				.managerDn(config().managerDN)
-				.managerPassword(config().managerPassword)
-				.root(config().searchBase)
-			.and()
-			.userSearchBase(config().searchBase)
-			.userSearchFilter(config().searchFilter)
+		.contextSource()
+			.ldif(config().getUrl())
+		.and()
+		.userDnPatterns(config().getSearchFilter())
+		.userSearchBase(config().getSearchBase())
 		;
 	}
 
