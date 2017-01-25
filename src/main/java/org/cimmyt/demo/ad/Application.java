@@ -13,7 +13,6 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
  * @since 1.0.0
  */
 @SpringBootApplication
-@PropertySource("application.properties")
 @PropertySource("ldap.properties")
 @PropertySource("oauth.properties")
 public class Application extends WebMvcConfigurerAdapter{
