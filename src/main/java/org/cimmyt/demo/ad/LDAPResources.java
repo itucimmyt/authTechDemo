@@ -10,11 +10,11 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
  */
 @ConfigurationProperties("security.cimmyt.ldap")
 class LDAPResources {
-	String url;
-	String managerDN;
-	String managerPassword;
-	String searchBase;
-	String searchFilter;
+	private String url;
+	private String managerDN;
+	private String managerPassword;
+	private String searchBase;
+	private String searchFilter;
 	
 	public String getUrl() {
 		return url;
